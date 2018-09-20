@@ -23,8 +23,9 @@
 
     <modules>
         <module>sa-eureka-service</module>
-        <module>sa-eureka-register-server</module>
-        <module>sa-eureka-register-server2</module>
+        <module>sa-eureka-server</module>
+        <module>sa-eureka-server2</module>
         <module>sa-ribbon-consumer</module>
+        <module>sa-hystrix-dashboard</module>
     </modules>
 </project>

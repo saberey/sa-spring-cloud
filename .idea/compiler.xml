@@ -6,15 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="sa-eureka-register-server" />
-        <module name="sa-eureka-register-server2" />
+        <module name="sa-eureka-server" />
+        <module name="sa-eureka-server2" />
         <module name="sa-eureka-service" />
+        <module name="sa-feign-consumer" />
+        <module name="sa-hello-service-api" />
+        <module name="sa-hystrix-dashboard" />
         <module name="sa-ribbon-consumer" />
+        <module name="sa-turbine" />
         <module name="sa-zuul" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="sa-ribbon-consumer2" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>

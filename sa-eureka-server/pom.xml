@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.avalon</groupId>
-    <artifactId>sa-eureka-server2</artifactId>
+    <artifactId>sa-eureka-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>sa-eureka-register-server2</name>
+    <name>sa-eureka-server</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>

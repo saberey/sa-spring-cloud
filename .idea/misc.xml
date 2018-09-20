@@ -8,6 +8,10 @@
         <option value="$PROJECT_DIR$/sa-eureka/pom.xml" />
         <option value="$PROJECT_DIR$/sa-web/pom.xml" />
         <option value="$PROJECT_DIR$/sa-zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/sa-hystrix-dashboard/pom.xml" />
+        <option value="$PROJECT_DIR$/sa-turbine/pom.xml" />
+        <option value="$PROJECT_DIR$/sa-feign-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/sa-hello-service-api/pom.xml" />
       </list>
     </option>
   </component>
