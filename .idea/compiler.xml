@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="sa-azure" />
         <module name="sa-eureka-server" />
         <module name="sa-eureka-server2" />
         <module name="sa-eureka-service" />

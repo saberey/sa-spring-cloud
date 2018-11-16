@@ -27,5 +27,6 @@
         <module>sa-eureka-server2</module>
         <module>sa-ribbon-consumer</module>
         <module>sa-hystrix-dashboard</module>
+        <module>sa-azure</module>
     </modules>
 </project>
