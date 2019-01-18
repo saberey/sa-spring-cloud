@@ -69,36 +69,37 @@ public class BlobBasic {
      * @param path
      */
     public  static Boolean downLoad(String containerName,String path,String target){
+        return downLoad(containerName,path,null,target);
+    }
+
+    public  static Boolean downLoad(String containerName,String path,String src,String target){
 
         CloudBlobClient blobClient;
         CloudBlobContainer container1 = null;
         Boolean result = false;
+        if(src==null) {
+            src = target;
+        }
         try {
             blobClient = BlobClientProvider.getBlobClientReference();
             container1 = blobClient.getContainerReference(containerName);
-            //container1.createIfNotExists(BlobContainerPublicAccessType.CONTAINER,new BlobRequestOptions(),new OperationContext());
-            // container1 = createContainer(blobClient,containerName);
             File file  = new File(path+File.separator+target);
-            //file.createNewFile();
             if(!file.exists()){
                 file.getParentFile().mkdirs();
             }
-
-            CloudBlockBlob blob = container1.getBlockBlobReference(target);
+            CloudBlockBlob blob = container1.getBlockBlobReference(src);
             if(!blob.exists()){
-                logger.error("Azure blob file:{} not exists",target);
+                logger.error("Azure blob file:{} not exists",src);
                 return false;
             }
-            // blob.uploadFromFile(file.getAbsolutePath());
             blob.downloadToFile(file.getAbsolutePath());
             result = true;
-            System.out.println("Successfully download the blob.");
+            System.out.println("Successfully download the blob.target:"+path+File.separator+target);
         }catch (Throwable t){
-            logger.error("Azure blob download file:{} failed:{}",target,t.getMessage());
+            logger.error("Azure blob download file:{} target:{} failed:{}",src,path+File.separator+target,t.getMessage());
         }
         return result;
     }
-
     public static Boolean remove(String containerName,String blobName){
         CloudBlobClient blobClient;
         CloudBlobContainer container1 = null;
@@ -152,14 +153,14 @@ public class BlobBasic {
 
 
     public static void main(String[] args) {
-        String containerName = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")).toString();
+        String containerName = "20181203";
         String path = "E:\\工作\\fileTransfer\\download\\2017032320000020170323J00000052683250000010001.pdf";
         String downLoadPath = "E:\\tmpBlobFile";
-        String target = "2017032320000020170323J00000052683250000010001.pdf";
-
+        String src = "2018120320000020181203J00000101457990000010001.pdf";
+        String target = "test.pdf";
         // BlobBasic.upload(containerName,path);
-        //BlobBasic.downLoad(containerName,downLoadPath,target);
+        BlobBasic.downLoad(containerName,downLoadPath,src,target);
         // BlobBasic.remove(containerName,target);
-        System.out.println(BlobBasic.exists(containerName, target));
+        //System.out.println(BlobBasic.exists(containerName, target));
     }
 }

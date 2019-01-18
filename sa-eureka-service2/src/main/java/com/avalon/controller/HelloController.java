@@ -1,22 +1,23 @@
-package com.avalon.saweb.controller;
+package com.avalon.controller;
 
 import com.avalon.bean.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.couchbase.CouchbaseProperties;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
+import javax.naming.Context;
 import java.util.List;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author jwwang
  */
 @RestController
 public class HelloController {
+
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -32,12 +33,12 @@ public class HelloController {
         services.stream().forEach( each -> System.out.println(each));
         List<ServiceInstance> isList = client.getInstances("hello-service");
         isList.stream().forEach( instance -> System.out.println(instance.getHost()+"|"+instance.getUri()+"|"+instance.getServiceId()));
-        System.out.println("sa-eureka-service1");
+        System.out.println("sa-eureka-service2");
         return "hello world!";
     }
     @RequestMapping(value = "/hello1",method = RequestMethod.GET)
     public String hello1(@RequestParam("name") String name ){
-        System.out.println("sa-eureka-service1");
+
         return "hello"+name;
     }
     @RequestMapping(value = "/hello2",method = RequestMethod.GET)

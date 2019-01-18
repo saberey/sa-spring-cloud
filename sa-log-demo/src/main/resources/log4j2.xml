@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configuration >
+    <appenders>
+        <File name="file" fileName="${sys:user.home}/logs/hello.log">
+            <PatternLayout pattern="%d{HH:mm:ss,SSS} %p %c (%L) -%m%n" />
+        </File>
+    </appenders>
+    <loggers>
+        <root level="ERROR">
+            <appender-ref ref="file"/>
+        </root>
+        <logger name="demo.msa" level="DEBUG"/>
+    </loggers>
+</Configuration>

@@ -10,9 +10,11 @@
         <module name="sa-eureka-server" />
         <module name="sa-eureka-server2" />
         <module name="sa-eureka-service" />
+        <module name="sa-eureka-service2" />
         <module name="sa-feign-consumer" />
         <module name="sa-hello-service-api" />
         <module name="sa-hystrix-dashboard" />
+        <module name="sa-log-demo" />
         <module name="sa-ribbon-consumer" />
         <module name="sa-turbine" />
         <module name="sa-zuul" />

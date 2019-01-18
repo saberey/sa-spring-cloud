@@ -23,10 +23,10 @@ public class ConsumerController {
     @RequestMapping(value = "/feign-consumer2",method = RequestMethod.GET)
     public String helloConsumer2(){
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(helloService.hello()).append("\n");
+        //stringBuilder.append(helloService.hello()).append("\n");
         stringBuilder.append(helloService.hello1("DIDI")).append("\n");
-        stringBuilder.append(helloService.hello2("DIDI",30)).append("\n");
-        stringBuilder.append(helloService.hello3(new User("DIDI",30))).append("\n");
+        //stringBuilder.append(helloService.hello2("DIDI",30)).append("\n");
+        //stringBuilder.append(helloService.hello3(new User("DIDI",30))).append("\n");
         return stringBuilder.toString();
     }
     @Autowired
